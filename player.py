@@ -10,7 +10,7 @@ class Player:
         self.vitesse = vitesse
         self.coeur = 3
         self.pos_kunai = {'x': -10, 'y': -10}
-        self.pos_ult = {'x': -10, 'y': -10}
+        self.pos_ult = {'x': 20, 'y': 20}
         self.vit_kunai = vit_kunai
         self.vit_ult = vit_ult
         self.avancer = None
@@ -92,6 +92,18 @@ class Player:
             self.pos_kunai['x'] = self.position['x']
             self.pos_kunai['y'] = self.position['y']
 
+    def ult_update(self):
+
+        if self.joueur == 2:
+            self.pos_ult['x'] -= self.vit_ult
+
+        elif self.joueur == 1:
+            self.pos_ult['x'] += self.vit_ult
+
+        if pyxel.btn(self.ult):
+            self.pos_ult['x'] = self.position['x']
+            self.pos_ult['y'] = self.position['y']
+
     def vie_update(self):
 
         self.vie -= 0.5
@@ -100,3 +112,4 @@ class Player:
 
             self.coeur -= 1
             self.vie = 5
+

@@ -5,8 +5,8 @@ import time as t
 
 fps = 30
 vitesse = 1
-vit_kunai = 2.5
-vit_ult = 6
+vit_kunai = 3
+vit_ult = 1.5
 
 p1 = player.Player(1, vitesse=vitesse, vit_kunai=vit_kunai, vit_ult=vit_ult)
 p2 = player.Player(2, vitesse=vitesse, vit_kunai=vit_kunai, vit_ult=vit_ult)
@@ -36,6 +36,10 @@ def update():
     if kunai_p1:
         p2.vie_update()
 
+    # ult
+    p1.ult_update()
+    p2.ult_update()
+
     if p1.coeur == 0 or p2.coeur == 0:
         t.sleep(2)
         pyxel.quit()
@@ -50,6 +54,10 @@ def draw():
     # kunais
     pyxel.blt(p2.pos_kunai['x'], p2.pos_kunai['y'], img=0, u=42, v=0, w=4, h=3)
     pyxel.blt(p1.pos_kunai['x'], p1.pos_kunai['y'], img=0, u=42, v=4, w=4, h=3)
+
+    # ult
+    pyxel.blt(p1.pos_ult['x'], p1.pos_ult['y'], img=0, u=48, v=6, w=8, h=5)
+    pyxel.blt(p2.pos_ult['x'], p2.pos_ult['y'], img=0, u=48, v=1, w=8, h=5)
 
     # coeurs
     graphiques.coeurs(p1.coeur, p2.coeur)
