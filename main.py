@@ -3,7 +3,7 @@ import player
 import graphiques
 import time as t
 
-fps = 30
+fps = 60
 vitesse = 1
 vit_kunai = 3
 vit_ult = 1.5
@@ -31,14 +31,26 @@ def update():
                p2.position['y'] - 1 < p1.pos_kunai['y'] + 1 < p2.position['y'] + 8
 
     if kunai_p2:
-        p1.vie_update()
+        p1.vie_update(degats=0.5)
 
     if kunai_p1:
-        p2.vie_update()
+        p2.vie_update(degats=0.5)
 
     # ult
     p1.ult_update()
     p2.ult_update()
+
+    ult_p2 = p1.position['x'] < p2.pos_ult['x'] < p1.position['x'] + 6 and \
+               p1.position['y'] - 1 < p2.pos_ult['y'] + 2 < p1.position['y'] + 8
+
+    ult_p1 = p2.position['x'] < p1.pos_ult['x'] + 8 < p2.position['x'] + 6 and \
+               p2.position['y'] - 1 < p1.pos_ult['y'] + 2 < p2.position['y'] + 8
+
+    if ult_p2:
+        p1.vie_update(degats=0.75)
+
+    if ult_p1:
+        p2.vie_update(degats=0.75)
 
     if p1.coeur == 0 or p2.coeur == 0:
         t.sleep(2)

@@ -10,7 +10,7 @@ class Player:
         self.vitesse = vitesse
         self.coeur = 3
         self.pos_kunai = {'x': -10, 'y': -10}
-        self.pos_ult = {'x': 20, 'y': 20}
+        self.pos_ult = {'x': -10, 'y': -10}
         self.vit_kunai = vit_kunai
         self.vit_ult = vit_ult
         self.avancer = None
@@ -104,9 +104,9 @@ class Player:
             self.pos_ult['x'] = self.position['x']
             self.pos_ult['y'] = self.position['y']
 
-    def vie_update(self):
+    def vie_update(self, degats):
 
-        self.vie -= 0.5
+        self.vie -= degats
 
         if self.vie <= 0:
 
