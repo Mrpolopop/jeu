@@ -26,17 +26,17 @@ class Player:
             self.reculer = pyxel.KEY_S
             self.droite = pyxel.KEY_D
             self.gauche = pyxel.KEY_Q
-            self.attq = pyxel.KEY_A
-            self.ult = pyxel.KEY_E
+            self.attq = pyxel.KEY_T
+            self.ult = pyxel.KEY_Y
             self.position['x'] = 20
 
         elif joueur == 2:
-            self.avancer = pyxel.KEY_KP_5
-            self.reculer = pyxel.KEY_KP_2
-            self.droite = pyxel.KEY_KP_3
-            self.gauche = pyxel.KEY_KP_1
-            self.attq = pyxel.KEY_KP_4
-            self.ult = pyxel.KEY_KP_6
+            self.avancer = pyxel.KEY_UP
+            self.reculer = pyxel.KEY_DOWN
+            self.droite = pyxel.KEY_RIGHT
+            self.gauche = pyxel.KEY_LEFT
+            self.attq = pyxel.KEY_KP_1
+            self.ult = pyxel.KEY_KP_2
 
     def pos_update(self):
 
