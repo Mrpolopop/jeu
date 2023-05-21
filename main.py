@@ -3,7 +3,7 @@ import player
 import graphiques
 import time as t
 
-fps = 29
+fps = 30
 vitesse = 1
 vit_kunai = 2.5
 vit_ult = 6
