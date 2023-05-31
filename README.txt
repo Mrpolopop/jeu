@@ -6,4 +6,16 @@ joueur 1 (gauche):
     à droite: D
   
   attaques:
-    couteau: 
+    couteau: T
+    ultime: Y
+
+joueur 2 (droite):
+  déplacements:
+    en haut: flèche du haut
+    à gauche: flèche gauche
+    en bas: flèche du bas
+    à droite: flèche droite
+  
+  attaques:
+    couteau: pavé numérique: 1
+    ultime: pavé numérique: 2
