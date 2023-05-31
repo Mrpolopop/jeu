@@ -19,3 +19,5 @@ joueur 2 (droite):
   attaques:
     couteau: pavé numérique: 1
     ultime: pavé numérique: 2
+
+nécessite le module pyxel
